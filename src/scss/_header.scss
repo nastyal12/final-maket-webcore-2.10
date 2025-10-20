@@ -1,48 +1,60 @@
+/* --- Хедер --- */
+
 .header {
-    border-bottom: 1px solid $color-gray-100;
-    &__inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 20px;
-        max-width: $max-width;
-        margin: 0 auto;
-    }
-    &__burger {
-        background: transparent;
-        border: none;
-        padding: 6px;
-        display: flex;
-        align-items: center;
-        img {
-            width: 28px;
-            height: 28px;
-        }
-        @media (min-width: $bp-md) {
-            display: none;
-        }
-    }
-    &__logo img {
-        height: 36px;
-    }
-    &__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    background: $color-white;
+    border-bottom: 1px solid $color-border-header;
+    white-space: nowrap;
+    &__icons {
         display: flex;
         gap: 12px;
-        align-items: center;
     }
-    &__search img {
-        width: 22px;
-        height: 22px;
-    }
-    &__phone {
-        color: $color-pink;
-        text-decoration: none;
-        font-weight: 600;
+    &__icon,
+    &__icon-link,
+    &__logo-link {
+        flex: 0 0 auto;
+        width: 40px;
+        height: 40px;
         display: flex;
         align-items: center;
-        gap: 8px;
-        img {
-            width: 18px
+        justify-content: center;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+    &__icon img,
+    &__icon-link img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    &__logo {
+        margin-right: auto;
+    }
+    /* Медиа-запросы для хедера */
+    @media (min-width: $breakpoint-tablet) {
+        justify-content: space-between;
+        &__icon--menu,
+        &__logo-link {
+            display: none;
         }
+        &__icon--call,
+        &__icon--profile {
+            display: flex;
+        }
+        &__icons {
+            margin-right: 0;
+        }
+    }
+    @media (min-width: $breakpoint-desktop) {
+        display: none; // Полностью прячем на десктопе
     }
 }

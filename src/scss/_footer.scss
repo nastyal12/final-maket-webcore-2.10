@@ -1,14 +1,40 @@
-.footer {
-    border-top: 1px solid $color-gray-100;
-    padding: 18px 0;
-    .footer__inner {
-        max-width: $max-width;
-        margin: 0 auto;
-        padding: 0 20px;
-        display: flex;
-        gap: 20px;
+/* --- Футер --- */
+
+.main-footer {
+    padding: 24px 16px;
+    text-align: center;
+    font-size: 14px;
+    color: $color-text-secondary;
+    border-top: 1px solid $color-border-header;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    a {
+        color: $color-text-secondary;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @media (min-width: $breakpoint-tablet) {
+        flex-direction: row;
         justify-content: space-between;
-        color: $color-muted;
-        font-size: 13px;
+        align-items: center;
+        text-align: left;
+    }
+    @media (min-width: $breakpoint-desktop) {
+        grid-area: footer;
+        /* <--- ДОБАВЬ ЭТУ СТРОКУ */
+    }
+    .footer-company {
+        flex: 1;
+    }
+    .footer-link {
+        flex: 1;
+        text-align: center;
+    }
+    .footer-info {
+        flex: 1;
+        text-align: right;
     }
 }

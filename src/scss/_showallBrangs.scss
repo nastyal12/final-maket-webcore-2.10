@@ -1,13 +1,18 @@
-@use 'base/fonts';
-@use 'base/reset';
-@use 'base/base';
-@use 'abstracts/variables';
-@use 'abstracts/mixins';
-@use 'components/buttons';
-@use 'layout/container';
-@use 'layout/nav';
-@use 'layout/services';
-@use 'layout/swiper';
-@use 'layout/showallBrands';
-@use 'layout/sideMenu';
-@use 'layout/footer';
+/* --- Кнопка "Показать/Скрыть" --- */
+
+.toggle-btn {
+    display: none; // Скрыта на мобильных
+    @media (min-width: $breakpoint-tablet) {
+        display: inline-block;
+        margin: 16px 0 0 16px;
+        background: none;
+        border: none;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    // Сюда можно добавить стили для стрелки (::before)
+    &--toggled {
+        // ...
+    }
+}

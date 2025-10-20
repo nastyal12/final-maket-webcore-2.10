@@ -1,0 +1,50 @@
+/* --- ГЛАВНЫЙ ФАЙЛ СТИЛЕЙ --- */
+
+// 1. Импорт переменных и миксинов
+@import 'scss/variables';
+@import 'scss/mixins';
+// (У тебя также есть _container.scss, его можно импортировать здесь)
+// @import 'container'; 
+// 2. Базовые стили
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: $color-text-primary;
+    background: $color-bg;
+    // Сетка для десктопа
+    @media (min-width: $breakpoint-desktop) {
+        display: grid;
+        /* 1 колонка - 320px (сайдбар), 2-я - все остальное */
+        grid-template-columns: 320px 1fr;
+        /* 1 ряд - контент, 2-й - футер */
+        grid-template-rows: 1fr auto;
+        grid-template-areas: "sidebar main" "sidebar footer";
+        height: 100vh;
+        overflow: hidden;
+        /* Скролл будет во <main>, а не у body */
+    }
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+// 3. Импорт компонентов
+@import 'scss/header';
+@import 'scss/sideMenu';
+@import 'scss/menu';
+@import 'scss/nav';
+@import 'scss/services';
+@import 'scss/hero';
+@import 'scss/brands';
+@import 'scss/showallBrangs';
+@import 'scss/swiper';
+@import 'scss/prices';
+@import 'scss/buttons';
+@import 'scss/footer';

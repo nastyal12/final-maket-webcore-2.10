@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <title>
+        Финальный проект </title>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+
+        <button type="button" class="header__icon header__icon--menu" aria-label="Открыть меню">
+            <img src="./img/burger.png" alt="">
+        </button>
+
+        <a href="/" class="header__logo-link" aria-label="На главную CPS">
+            <img src="./img/Group.png" alt="CPS Logo" class="header__logo">
+        </a>
+
+        <div class="header__icons">
+            <a href="tel:88008908900" class="header__icon-link" aria-label="Позвонить">
+                <img src="./img/call.png" alt="">
+            </a>
+            <a href="/chat" class="header__icon-link" aria-label="Написать в чат">
+                <img src="./img/chat.png" alt="">
+            </a>
+            <a href="/profile" class="header__icon-link" aria-label="Войти в профиль">
+                <img src="./img/profile.png" alt="">
+            </a>
+        </div>
+    </header>
+    <aside class="mobile-menu">
+        <button type="button" class="btn close" aria-label="Закрыть меню">
+            <img src="./img/close.png" alt="">
+        </button>
+
+        <nav class="menu-links">
+            <ul>
+                <li><a href="#">Ремонт техники</a></li>
+                <li><a href="#">Услуги и сервисы</a></li>
+                <li><a href="#">Корпоративным клиентам</a></li>
+                <li><a href="#">Продавцам техники</a></li>
+                <li><a href="#">Партнерам</a></li>
+                <li><a href="#">Производителям</a></li>
+                <li><a href="#">Наши сервисные центры</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="menu-footer">
+            <a href="mailto:mail@cps.com" class="menu-footer__email">mail@cps.com</a>
+            <a href="tel:+78008908900" class="menu-footer__phone phone">8 800 890 8900</a>
+            <div class="langs">
+                <a href="#" class="langs__item langs__item--active">RU</a>
+                <a href="#" class="langs__item">EN</a>
+                <a href="#" class="langs__item">CH</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="services">
+        <h1 class="services__title">Услуги и сервисы</h1>
+
+        <nav class="services__menu">
+            <ul class="menu">
+                <li class="menu__item"><a href="#" class="menu__link">Ремонтируемые бренды</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">Ремонтируемые устройства</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">Цены на услуги</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">Адреса сервисных центров</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">Специальные цены</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
+            </ul>
+        </nav>
+
+        <section class="services__content">
+            <div class="services__text">
+                <p>
+                    Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
+                </p>
+                <p>
+                    Мы успешно работаем с 1992 года и заслужили репутацию надежного партнёра, что подтверждает большое количество постоянных клиентов.
+                </p>
+                <a href="#" class="services__more">Читать далее</a>
+            </div>
+
+            <div class="services__image">
+                <img src="./img/backg.png" alt="Логотип CPS на вывеске">
+            </div>
+        </section>
+
+        <section class="brands-section">
+            <div class="brands-list">
+                <a href="#" class="brand">
+                    <img src="./img/lenovo.png" alt="Lenovo">
+                    <span class="brand__arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#" class="brand">
+                    <img src="./img/samsung.png" alt="Samsung">
+                    <span class="brand__arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#" class="brand">
+                    <img src="./img/apple.png" alt="Apple">
+                    <span class="brand__arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#" class="brand">
+                    <img src="./img/bosch.png" alt="Bosch">
+                    <span class="brand__arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#" class="brand">
+                    <img src="./img/hp.png" alt="HP">
+                    <span class="brand__arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#" class="brand">
+                    <img src="./img/acer.png" alt="Acer">
+                    <span class="brand__arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#" class="brand">
+                    <img src="./img/viewsonic.png" alt="ViewSonic">
+                    <span class="brand__arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#" class="brand">
+                    <img src="./img/sony.png" alt="Sony">
+                    <span class="brand__arrow" aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            <button type="button" class="toggle-btn">Показать все</button>
+
+            <div class="brands-swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#" class="brand">
+                            <img src="./img/lenovo.png" alt="Lenovo">
+                            <span class="brand__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="brand">
+                            <img src="./img/samsung.png" alt="Samsung">
+                            <span class="brand__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="brand">
+                            <img src="./img/apple.png" alt="Apple">
+                            <span class="brand__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="brand">
+                            <img src="./img/bosch.png" alt="Bosch">
+                            <span class="brand__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="brand">
+                            <img src="./img/hp.png" alt="HP">
+                            <span class="brand__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="brand">
+                            <img src="./img/acer.png" alt="Acer">
+                            <span class="brand__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="brand">
+                            <img src="./img/viewsonic.png" alt="ViewSonic">
+                            <span class="brand__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="brand">
+                            <img src="./img/sony.png" alt="Sony">
+                            <span class="brand__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section class="prices-section">
+            <h2>Цены на услуги</h2>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Ремонтные услуги</th>
+                        <th>Цена</th>
+                        <th>Срок</th>
+                        <th class="action"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="service-name">Диагностика</td>
+                        <td class="price">Бесплатно</td>
+                        <td class="term">30 мин</td>
+                        <td class="action">
+                            <a href="#" class="order-button">Заказать</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="service-name">Замена дисплея</td>
+                        <td class="price">1 000 ₽</td>
+                        <td class="term">30-120 мин</td>
+                        <td class="action">
+                            <a href="#" class="order-button">Заказать</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="service-name">Замена полифонического динамика</td>
+                        <td class="price">1 000 ₽</td>
+                        <td class="term">30-120 мин</td>
+                        <td class="action">
+                            <a href="#" class="order-button">Заказать</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="service-name">Тестирование с выдачей технического заключения</td>
+                        <td class="price">1 000 ₽</td>
+                        <td class="term">30-120 мин</td>
+                        <td class="action">
+                            <a href="#" class="order-button">Заказать</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="service-name">Замена программного обеспечения</td>
+                        <td class="price">1 000 ₽</td>
+                        <td class="term">30-120 мин</td>
+                        <td class="action">
+                            <a href="#" class="order-button">Заказать</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="disclaimer">
+                Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для получения коммерческого предложения на постоянное обслуживание, оставьте заявку.
+            </p>
+
+            <a href="#" class="commercial-offer">Получить коммерческое предложение ></a>
+        </section>
+
+    </main>
+    <footer class="main-footer">
+        <p class="footer-company">© 2019 CPS. Разработано командой Apesong.</p>
+        <a href="#" class="footer-link">Политика конфиденциальности</a>
+        <p class="footer-info">Информация, размещенная на данной странице, не является публичной офертой
+        </p>
+    </footer>
+</body>
+
+</html>

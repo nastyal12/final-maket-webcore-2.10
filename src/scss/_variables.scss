@@ -1,20 +1,15 @@
-// fonts
-$font-primary: 'TT Lakes',
-system-ui,
--apple-system,
-'Segoe UI',
-Roboto,
-Arial;
-// colors (точные значения можешь заменить по Figma)
-$color-pink: #ff2b7a;
-$color-pink-dark: #ff1f68;
-$color-muted: #9aa3a3;
-$color-gray-100: #f6f6f6;
-$color-gray-200: #edf6f4;
-$color-text: #222;
-$max-width: 1160px;
-// breakpoints
-$bp-sm: 320px;
-$bp-md: 768px;
-$bp-lg: 1024px;
-$bp-xl: 1366px;
+/* --- Переменные --- */
+
+// Цвета
+$color-pink: #ff4081;
+$color-text-primary: #1B1C21;
+$color-text-secondary: #7E7E82;
+$color-bg: #f9f9f9;
+$color-white: #fff;
+$color-border: #EAEAEA;
+$color-border-light: #f0f0f0;
+$color-border-header: #ddd;
+$color-pagination: #B5B6BC;
+// Медиа-запросы (точки перелома)
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1120px;

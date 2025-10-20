@@ -1,13 +1,14 @@
-@use 'base/fonts';
-@use 'base/reset';
-@use 'base/base';
-@use 'abstracts/variables';
-@use 'abstracts/mixins';
-@use 'components/buttons';
-@use 'layout/container';
-@use 'layout/nav';
-@use 'layout/services';
-@use 'layout/swiper';
-@use 'layout/showallBrands';
-@use 'layout/sideMenu';
-@use 'layout/footer';
+/* --- Стили Swiper --- */
+
+.brands-swiper {
+    padding: 0 16px 30px 16px; // Отступ для пагинации
+    .swiper-pagination-bullet {
+        background: $color-pagination;
+    }
+    .swiper-pagination-bullet-active {
+        background: $color-pink;
+    }
+    @media (min-width: $breakpoint-tablet) {
+        display: none; // Скрываем на планшете
+    }
+}

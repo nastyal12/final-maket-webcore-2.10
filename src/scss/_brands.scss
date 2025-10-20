@@ -1,79 +1,54 @@
-.brands {
-    padding: 18px 0;
-    background: #fff;
-    .brands__inner {
-        max-width: $max-width;
-        margin: 0 auto;
-        padding: 0 20px;
+/* --- Секция Брендов --- */
+
+.brands-section {
+    padding: 16px 0;
+    h2 {
+        font-size: 16px;
+        font-weight: 500;
+        color: $color-text-secondary;
+        text-transform: uppercase;
+        padding: 0 16px;
+        margin-bottom: 16px;
     }
-    .brands__title {
-        font-weight: 700;
-        margin-bottom: 12px;
-        color: $color-text;
-    }
-    .brands__row {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-    .brands__grid {
+}
+
+// Десктопная сетка
+.brands-list {
+    display: none; // Скрыта на мобильных
+    @media (min-width: $breakpoint-tablet) {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        transition: max-height .25s ease;
-        &--expanded {
-            grid-template-columns: repeat(4, 1fr);
-        }
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        padding: 0 16px;
+        max-height: 170px; // Логика "Скрыть"
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
     }
-    .brand-card {
-        background: #fff;
-        border: 1px solid $color-gray-100;
-        padding: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-radius: 8px;
-        img {
-            max-height: 32px;
-        }
-        &__btn {
-            background: transparent;
-            border: 2px solid $color-pink;
-            border-radius: 999px;
-            width: 36px;
-            height: 36px;
-            color: $color-pink;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 1;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
+    @media (min-width: $breakpoint-desktop) {
+        grid-template-columns: repeat(4, 1fr);
     }
-    .brands__showall {
-        border: none;
-        background: transparent;
-        color: $color-pink;
-        font-weight: 600;
-        justify-self: start;
-        padding: 8px 0;
+    // Модификатор от JS
+    &--expanded {
+        max-height: 1000px;
     }
-    @media (min-width: 768px) {
-        .brands__grid {
-            grid-template-columns: repeat(4, 1fr);
-        }
-        .brand-card img {
-            max-height: 36px;
-        }
-        .brands__showall {
-            display: block;
-        }
+}
+
+// Карточка бренда
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    box-sizing: border-box;
+    text-decoration: none;
+    img {
+        max-width: 120px;
+        height: auto;
     }
-    @media (min-width: 1366px) {
-        .brands__grid {
-            grid-template-columns: repeat(8, 1fr);
-            gap: 18px;
-        }
+    .brand__arrow {
+        @include pink-arrow; // Используем миксин
     }
 }

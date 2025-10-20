@@ -1,13 +1,18 @@
-@use 'base/fonts';
-@use 'base/reset';
-@use 'base/base';
-@use 'abstracts/variables';
-@use 'abstracts/mixins';
-@use 'components/buttons';
-@use 'layout/container';
-@use 'layout/nav';
-@use 'layout/services';
-@use 'layout/swiper';
-@use 'layout/showallBrands';
-@use 'layout/sideMenu';
-@use 'layout/footer';
+/* --- Кнопки --- */
+
+.order-button {
+    @include pink-button; // Используем миксин
+}
+
+.commercial-offer {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    color: $color-text-primary;
+    text-decoration: none;
+    padding: 16px;
+    &:after {
+        content: ' >';
+        color: $color-pink;
+    }
+}

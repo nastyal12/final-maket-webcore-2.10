@@ -1,0 +1,54 @@
+/* --- Секция Цен --- */
+
+.prices-section {
+    padding: 16px 0;
+    @media (max-width: ($breakpoint-tablet - 1px)) {
+        overflow-x: auto; // Горизонтальный скролл на мобильных
+        padding-bottom: 16px;
+    }
+    h2 {
+        font-size: 16px;
+        font-weight: 500;
+        color: $color-text-secondary;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        padding: 0 16px;
+    }
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: $color-white;
+    @media (max-width: ($breakpoint-tablet - 1px)) {
+        min-width: 700px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    th,
+    td {
+        padding: 16px 20px;
+        text-align: left;
+        border-bottom: 1px solid $color-border-light;
+        vertical-align: middle;
+    }
+    th {
+        color: $color-text-secondary;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
+    .action {
+        text-align: right;
+    }
+}
+
+.disclaimer {
+    font-size: 14px;
+    color: $color-text-secondary;
+    line-height: 1.5;
+    padding: 0 16px;
+    margin-top: 16px;
+}
