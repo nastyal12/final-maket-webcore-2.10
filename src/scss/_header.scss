@@ -39,21 +39,6 @@
     &__logo {
         margin-right: auto;
     }
-    /* Медиа-запросы для хедера */
-    @media (min-width: $breakpoint-tablet) {
-        justify-content: space-between;
-        &__icon--menu,
-        &__logo-link {
-            display: none;
-        }
-        &__icon--call,
-        &__icon--profile {
-            display: flex;
-        }
-        &__icons {
-            margin-right: 0;
-        }
-    }
     @media (min-width: $breakpoint-desktop) {
         display: none; // Полностью прячем на десктопе
     }

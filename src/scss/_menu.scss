@@ -1,10 +1,19 @@
-/* --- Ссылки в боковом меню --- */
+/* --- src/scss/_menu.scss --- */
+
+
+/* Обёртка для ссылок в боковом меню */
 
 .menu-links {
+    flex-grow: 1; // <--- ЭТО ГЛАВНОЕ ПРАВИЛО (растягиваемся)
+    overflow-y: auto; // <--- Добавляем скролл, если ссылок много
+    @include hide-scrollbar; // Используем миксин (если он есть)
     ul {
         list-style: none;
         padding: 0;
         margin: 0;
+    }
+    li {
+        margin-bottom: 24px; // Отступ между ссылками
     }
     a {
         display: block;
@@ -12,7 +21,6 @@
         color: $color-text-primary;
         font-size: 16px;
         font-weight: 500;
-        padding: 12px 0;
         &:hover {
             color: $color-pink;
         }

@@ -1,6 +1,9 @@
-/* --- Боковое меню (Контейнер) --- */
+/* --- src/scss/_sideMenu.scss --- */
 
 .mobile-menu {
+    /* * --- МОБИЛЬНЫЕ СТИЛИ (0px - 767px) ---
+     * Это база. Меню - скрытая боковая панель.
+     */
     position: fixed;
     top: 0;
     left: 0;
@@ -15,23 +18,64 @@
     flex-direction: column;
     transform: translateX(-110%);
     transition: transform 0.4s ease-in-out;
-    box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2);
-    // Модификатор для JS
+    box-shadow: 16px 0 52px 0 rgba(14, 24, 80, 0.2);
     &--is-open {
         transform: translateX(0);
     }
-    .close {
-        background: none;
-        border: none;
-        padding: 0;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        margin-bottom: 20px;
-        align-self: flex-end;
+    /* --- 1. ХЕДЕР МЕНЮ (Mobile) --- */
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        flex-shrink: 0;
+        .btn {
+            background: $color-pink;
+            border: none;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header__logo-link {
+            margin: 0;
+        }
+        .search img,
+        .close img {
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+        }
     }
+    /* --- 2. ССЫЛКИ --- */
+    // Стили для .menu-links у тебя в _menu.scss
+    /* --- 3. ФУТЕР МЕНЮ (Mobile) --- */
     .menu-footer {
-        margin-top: auto; // Прибивает к низу
+        margin-top: auto;
+        flex-shrink: 0;
+        &__icons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            .header__icon-link {
+                width: 40px;
+                height: 40px;
+                background-color: $color-pink;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                    width: 60%;
+                    height: 60%;
+                    object-fit: contain;
+                }
+            }
+        }
         a {
             text-decoration: none;
             color: $color-text-primary;
@@ -43,28 +87,65 @@
             margin: 12px 0;
         }
     }
+    /* --- 4. ЯЗЫКИ (Mobile) --- */
     .langs {
         margin-top: 20px;
+        padding-bottom: 16px;
         a {
             display: inline-block;
             margin-right: 8px;
             font-weight: 500;
+            color: $color-text-primary;
+            text-decoration: none;
         }
         .langs__item--active {
             color: $color-text-secondary;
         }
     }
-    /* Медиа-запросы для сайдбара */
+    /* * ======================================
+     * --- МЕДИА-ЗАПРОСЫ (ПЛАНШЕТ И ДЕСКТОП) ---
+     * ======================================
+     */
+    /* --- ПЛАНШЕТ (768px - 1119px) --- */
+    @media (min-width: $breakpoint-tablet) {
+        /* * Как ты и сказал, тут *ничего не меняется*, 
+         * кроме внутренних отступов (делаем их чуть больше)
+         */
+        .menu-footer {
+            &__icons {
+                margin-bottom: 24px; // было 16px
+            }
+            .phone {
+                margin: 16px 0; // было 12px
+            }
+        }
+        .langs {
+            margin-top: 32px; // было 20px
+        }
+    }
+    /* --- ДЕСКТОП (1120px и ВЫШЕ) --- */
     @media (min-width: $breakpoint-desktop) {
-        grid-area: sidebar;
-        /* <--- ДОБАВЬ ЭТУ СТРОКУ */
+        /* * А вот тут, как ты сказал, "меню сразу выходит на одной страницы"
+         */
+        /* 1. Делаем меню постоянным */
+        grid-area: sidebar; // (Это сработает, если в style.scss body = grid)
         transform: translateX(0);
         position: static;
         height: 100%;
-        /* <--- ИЗМЕНИ ЭТО НА 100% */
-        flex-shrink: 0;
         box-shadow: none;
+        /* 2. Настраиваем хедер (как на макете Menu_768) */
+        &__header {
+            display: flex;
+            justify-content: flex-start; // Лого влево
+        }
         .close {
+            display: none; // Прячем крестик
+        }
+        .search {
+            margin-left: auto; // Поиск вправо
+        }
+        /* 3. Прячем языки (как на макете Menu_768) */
+        .langs {
             display: none;
         }
     }
