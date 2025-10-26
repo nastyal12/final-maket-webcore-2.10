@@ -1,6 +1,5 @@
 /* --- Миксины (примеси) --- */
 
-// Миксин для розовой кнопки
 @mixin pink-button {
     display: inline-block;
     background: $color-pink;
@@ -16,7 +15,6 @@
     cursor: pointer;
 }
 
-// Миксин для розовой стрелки (в блоке брендов)
 @mixin pink-arrow {
     display: flex;
     align-items: center;
@@ -30,14 +28,10 @@
     font-size: 20px;
 }
 
-// Миксин для скрытия скроллбара
 @mixin hide-scrollbar {
     -ms-overflow-style: none;
-    /* IE и Edge */
     scrollbar-width: none;
-    /* Firefox */
     &::-webkit-scrollbar {
         display: none;
-        /* Chrome, Safari */
     }
 }

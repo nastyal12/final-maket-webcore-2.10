@@ -1,0 +1,64 @@
+/* --- src/scss/_types.scss --- */
+
+.types-section {
+    /* ... (стили для заголовка h2) ... */
+}
+
+
+/* 1. СТИЛИ ДЛЯ КАРТОЧКИ */
+
+.type-card {
+    display: flex; // <--- БЫЛО 'block'
+    justify-content: space-between; // <--- ДОБАВЬ ЭТО
+    align-items: center; // <--- ДОБАВЬ ЭТО
+    padding: 16px;
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    text-decoration: none;
+    color: $color-text-primary;
+    font-weight: 500;
+}
+
+
+/* * 2. СТИЛИ ДЛЯ СТРЕЛКИ
+ * (Мы используем миксин, который уже есть в _mixins.scss)
+ */
+
+.type-card .brand__arrow {
+    @include pink-arrow; // <--- ДОБАВЬ ЭТОТ БЛОК
+    flex-shrink: 0; // (чтобы стрелка не сжималась)
+}
+
+
+/* 3. МОБИЛЬНЫЙ СЛАЙДЕР */
+
+.types-swiper {
+    padding: 0 16px 30px 16px;
+    @media (min-width: $breakpoint-tablet) {
+        display: none !important;
+    }
+}
+
+
+/* 4. ДЕСКТОПНАЯ СЕТКА */
+
+.types-list,
+.types-section .toggle-btn {
+    display: none;
+    @media (min-width: $breakpoint-tablet) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        padding: 0 16px;
+    }
+    @media (min-width: $breakpoint-desktop) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.types-section .toggle-btn {
+    @media (min-width: $breakpoint-tablet) {
+        display: inline-block;
+    }
+}

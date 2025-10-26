@@ -1,19 +1,16 @@
-/* --- src/scss/_menu.scss --- */
-
-
 /* Обёртка для ссылок в боковом меню */
 
 .menu-links {
-    flex-grow: 1; // <--- ЭТО ГЛАВНОЕ ПРАВИЛО (растягиваемся)
-    overflow-y: auto; // <--- Добавляем скролл, если ссылок много
-    @include hide-scrollbar; // Используем миксин (если он есть)
+    flex-grow: 1;
+    overflow-y: auto;
+    @include hide-scrollbar;
     ul {
         list-style: none;
         padding: 0;
         margin: 0;
     }
     li {
-        margin-bottom: 24px; // Отступ между ссылками
+        margin-bottom: 24px;
     }
     a {
         display: block;

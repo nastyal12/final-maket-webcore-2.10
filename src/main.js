@@ -75,39 +75,78 @@ document.addEventListener("DOMContentLoaded", () => {
     /**
      * === 4. Логика Слайдера Брендов (Mobile) ===
      */
-    let swiperInstance = null;
-    const mobileBreakpoint = 768;
+    /* --- src/main.js --- */
 
-    function initSwiper() {
-        // Убедимся, что Swiper загружен
-        if (typeof Swiper === 'undefined') {
-            console.error('Swiper library not found.');
-            return;
-        }
+    /**
+     * === 4. Логика ВСЕХ Слайдеров (Mobile) ===
+     */
 
-        if (window.innerWidth < mobileBreakpoint && !swiperInstance) {
-            // Создаем слайдер
-            swiperInstance = new Swiper(".brands-swiper", {
-                loop: true,
-                slidesPerView: 1.3,
-                spaceBetween: 16,
+    // Переменные для хранения слайдеров
+    let brandsSwiper = null;
+    let typesSwiper = null;
+    let pricesSwiper = null;
 
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-            });
-        } else if (window.innerWidth >= mobileBreakpoint && swiperInstance) {
-            // Уничтожаем слайдер на десктопе
-            swiperInstance.destroy();
-            swiperInstance = null;
+    const mobileBreakpoint = 768; // Точка, где слайдеры отключаются
+
+    // Функция, которая настраивает Swiper
+    function initSwiper(selector, options) {
+        if (typeof Swiper === 'undefined') return null;
+
+        return new Swiper(selector, {
+            // Общие настройки для всех
+            loop: true,
+            slidesPerView: 1.3,
+            spaceBetween: 16,
+            pagination: {
+                el: `${selector} .swiper-pagination`,
+                clickable: true,
+            },
+            // Добавляем специфичные настройки, если они есть
+            ...options,
+        });
+    }
+
+    // Главная функция, которая включает/выключает слайдеры
+    function checkSwipers() {
+        if (window.innerWidth < mobileBreakpoint) {
+            // --- ЭКРАН МОБИЛЬНЫЙ ---
+
+            // Включаем слайдер Брендов, если он еще не включен
+            if (!brandsSwiper) {
+                brandsSwiper = initSwiper(".brands-swiper");
+            }
+            // Включаем слайдер Типов ремонта
+            if (!typesSwiper) {
+                typesSwiper = initSwiper(".types-swiper");
+            }
+            // Включаем слайдер Цен
+            if (!pricesSwiper) {
+                pricesSwiper = initSwiper(".prices-swiper");
+            }
+
+        } else {
+            // --- ЭКРАН ДЕСКТОПНЫЙ ---
+
+            // Уничтожаем слайдеры, если они были созданы
+            if (brandsSwiper) {
+                brandsSwiper.destroy();
+                brandsSwiper = null;
+            }
+            if (typesSwiper) {
+                typesSwiper.destroy();
+                typesSwiper = null;
+            }
+            if (pricesSwiper) {
+                pricesSwiper.destroy();
+                pricesSwiper = null;
+            }
         }
     }
 
     // Запускаем проверку при загрузке
-    initSwiper();
+    checkSwipers();
 
     // И при изменении размера окна
-    window.addEventListener('resize', initSwiper);
+    window.addEventListener('resize', checkSwipers);
 
-}); // <- Вот эта строка
+}); // <- Конец DOMContentLoaded

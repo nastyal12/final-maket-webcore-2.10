@@ -23,8 +23,8 @@ body {
         /* 1 колонка - 320px (сайдбар), 2-я - все остальное */
         grid-template-columns: 320px 1fr;
         /* 1 ряд - контент, 2-й - футер */
-        grid-template-rows: 1fr auto;
-        grid-template-areas: "sidebar main" "sidebar footer";
+        grid-template-rows: 1fr;
+        grid-template-areas: "sidebar main";
         height: 100vh;
         overflow: hidden;
         /* Скролл будет во <main>, а не у body */
@@ -48,3 +48,4 @@ body {
 @import 'scss/prices';
 @import 'scss/buttons';
 @import 'scss/footer';
+@import 'scss/types';

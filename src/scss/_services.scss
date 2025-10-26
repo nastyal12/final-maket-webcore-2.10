@@ -1,4 +1,4 @@
-/* --- Обёртка контента <main> --- */
+/* --- src/scss/_services.scss --- */
 
 .services {
     padding: 16px;
@@ -7,16 +7,57 @@
         font-weight: bold;
         margin-bottom: 24px;
     }
+    /* --- СТИЛИ ДЛЯ НОВОГО ХЕДЕРА ВНУТРИ MAIN --- */
+    .main-header {
+        display: none;
+        /* Прячем на мобильных и планшетах */
+        @media (min-width: $breakpoint-desktop) {
+            display: flex; // <--- ИСПРАВЛЕНО (было 'main')
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            &__title {
+                font-size: 28px;
+                font-weight: bold;
+            }
+            &__actions {
+                display: flex;
+                gap: 16px;
+            }
+            /* Стили для кнопок "Оставить заявку" */
+            .btn {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-weight: 500;
+                color: $color-text-primary;
+                text-decoration: none;
+                &--icon img {
+                    width: 40px;
+                    height: 40px;
+                    background-color: $color-pink;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    /* --- СТИЛИ ДЛЯ ДЕСКТОПА (1120px+) --- */
     @media (min-width: $breakpoint-desktop) {
-        grid-area: main;
-        /* <--- ДОБАВЬ ЭТУ СТРОКУ */
-        padding: 40px;
-        height: 100%;
-        /* <--- ДОБАВЬ ЭТУ СТРОКУ */
-        overflow-y: auto;
-        /* <--- ДОБАВЬ ЭТУ СТРОКУ (для скролла) */
-        &__title {
-            font-size: 28px;
+        /* & относится к родительскому .services */
+        & {
+            // <--- ИСПРАВЛЕНО (было '.services')
+            grid-area: main;
+            height: 100vh;
+            overflow-y: auto;
+            /* Добавляем скролл только контенту */
+        }
+        /* * Прячем старый заголовок h1 (т.к. у нас есть .main-header__title)
+         */
+        .services__title {
+            display: none;
         }
     }
 }

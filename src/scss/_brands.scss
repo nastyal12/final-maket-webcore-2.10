@@ -14,20 +14,19 @@
 
 // Десктопная сетка
 .brands-list {
-    display: none; // Скрыта на мобильных
+    display: none;
     @media (min-width: $breakpoint-tablet) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 16px;
         padding: 0 16px;
-        max-height: 170px; // Логика "Скрыть"
+        max-height: 170px;
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;
     }
     @media (min-width: $breakpoint-desktop) {
         grid-template-columns: repeat(4, 1fr);
     }
-    // Модификатор от JS
     &--expanded {
         max-height: 1000px;
     }
@@ -49,6 +48,6 @@
         height: auto;
     }
     .brand__arrow {
-        @include pink-arrow; // Используем миксин
+        @include pink-arrow;
     }
 }

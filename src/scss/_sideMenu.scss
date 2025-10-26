@@ -1,9 +1,7 @@
 /* --- src/scss/_sideMenu.scss --- */
 
 .mobile-menu {
-    /* * --- МОБИЛЬНЫЕ СТИЛИ (0px - 767px) ---
-     * Это база. Меню - скрытая боковая панель.
-     */
+    /* --- СТИЛИ ДЛЯ МОБИЛЬНЫХ и ПЛАНШЕТОВ (0-1119px) --- */
     position: fixed;
     top: 0;
     left: 0;
@@ -22,7 +20,8 @@
     &--is-open {
         transform: translateX(0);
     }
-    /* --- 1. ХЕДЕР МЕНЮ (Mobile) --- */
+    /* ... (все твои стили для __header, .btn, .menu-footer, .langs) ... */
+    /* --- 1. ХЕДЕР МЕНЮ --- */
     &__header {
         display: flex;
         justify-content: space-between;
@@ -51,9 +50,7 @@
             object-fit: contain;
         }
     }
-    /* --- 2. ССЫЛКИ --- */
-    // Стили для .menu-links у тебя в _menu.scss
-    /* --- 3. ФУТЕР МЕНЮ (Mobile) --- */
+    /* --- 3. ФУТЕР МЕНЮ --- */
     .menu-footer {
         margin-top: auto;
         flex-shrink: 0;
@@ -87,7 +84,7 @@
             margin: 12px 0;
         }
     }
-    /* --- 4. ЯЗЫКИ (Mobile) --- */
+    /* --- 4. ЯЗЫКИ --- */
     .langs {
         margin-top: 20px;
         padding-bottom: 16px;
@@ -102,51 +99,36 @@
             color: $color-text-secondary;
         }
     }
-    /* * ======================================
-     * --- МЕДИА-ЗАПРОСЫ (ПЛАНШЕТ И ДЕСКТОП) ---
-     * ======================================
-     */
-    /* --- ПЛАНШЕТ (768px - 1119px) --- */
-    @media (min-width: $breakpoint-tablet) {
-        /* * Как ты и сказал, тут *ничего не меняется*, 
-         * кроме внутренних отступов (делаем их чуть больше)
-         */
-        .menu-footer {
-            &__icons {
-                margin-bottom: 24px; // было 16px
-            }
-            .phone {
-                margin: 16px 0; // было 12px
-            }
-        }
-        .langs {
-            margin-top: 32px; // было 20px
-        }
-    }
-    /* --- ДЕСКТОП (1120px и ВЫШЕ) --- */
+    /* --- СТИЛИ ДЛЯ ДЕСКТОПА (1120px+) --- */
     @media (min-width: $breakpoint-desktop) {
-        /* * А вот тут, как ты сказал, "меню сразу выходит на одной страницы"
-         */
-        /* 1. Делаем меню постоянным */
-        grid-area: sidebar; // (Это сработает, если в style.scss body = grid)
-        transform: translateX(0);
+        /* 1. Становимся частью сетки */
+        grid-area: sidebar;
         position: static;
+        transform: translateX(0);
         height: 100%;
         box-shadow: none;
-        /* 2. Настраиваем хедер (как на макете Menu_768) */
+        /* 2. Настраиваем хедер (как на макете 1440px) */
         &__header {
             display: flex;
-            justify-content: flex-start; // Лого влево
+            justify-content: flex-start;
+            /* Лого влево */
         }
         .close {
-            display: none; // Прячем крестик
+            display: none;
+            /* Прячем крестик */
         }
         .search {
-            margin-left: auto; // Поиск вправо
+            margin-left: auto;
+            /* Поиск вправо */
         }
-        /* 3. Прячем языки (как на макете Menu_768) */
+        /* 3. Футер и языки (как на макете 1440px) */
         .langs {
-            display: none;
+            display: block;
+            /* Убедимся, что языки видны */
+        }
+        .menu-footer__icons {
+            display: flex;
+            /* Убедимся, что иконки видны */
         }
     }
 }

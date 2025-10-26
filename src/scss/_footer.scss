@@ -18,13 +18,17 @@
     }
     @media (min-width: $breakpoint-tablet) {
         flex-direction: row;
+        display: none;
         justify-content: space-between;
         align-items: center;
         text-align: left;
     }
     @media (min-width: $breakpoint-desktop) {
-        grid-area: footer;
-        /* <--- ДОБАВЬ ЭТУ СТРОКУ */
+        .main-footer {
+            grid-area: footer;
+            padding-left: 40px;
+            ;
+        }
     }
     .footer-company {
         flex: 1;

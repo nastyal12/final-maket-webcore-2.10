@@ -89,6 +89,19 @@
     </aside>
 
     <main class="services">
+        <header class="main-header">
+            <h1 class="main-header__title">Услуги и сервисы</h1>
+            <div class="main-header__actions">
+                <a href="#" class="btn btn--icon">
+                    <img src="./img/call.png" alt="">
+                    <span>Оставить заявку</span>
+                </a>
+                <a href="#" class="btn btn--icon">
+                    <img src="./img/chat.png" alt="">
+                    <span>Статус ремонта</span>
+                </a>
+            </div>
+        </header>
         <h1 class="services__title">Услуги и сервисы</h1>
 
         <nav class="services__menu">
@@ -111,8 +124,8 @@
                     Мы успешно работаем с 1992 года и заслужили репутацию надежного партнёра, что подтверждает большое количество постоянных клиентов.
                 </p>
                 <a href="#" class="services__more">Читать далее</a>
-            </div>
 
+            </div>
             <div class="services__image">
                 <img src="./img/backg.png" alt="Логотип CPS на вывеске">
             </div>
@@ -210,9 +223,117 @@
                 <div class="swiper-pagination"></div>
             </div>
         </section>
+        <section class="types-section">
+            <h2>РЕМОНТ РАЗЛИЧНЫХ ВИДОВ ТЕХНИКИ</h2>
 
+            <div class="types-list">
+                <a href="#" class="type-card">
+                    <span>Ремонт ноутбуков</span>
+                    <span class="brand__arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#" class="type-card">
+                    <span>Ремонт планшетов</span>
+                    <span class="brand__arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#" class="type-card">
+                    <span>Ремонт ПК</span>
+                    <span class="brand__arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#" class="type-card">
+                    <span>Ремонт мониторов</span>
+                    <span class="brand__arrow" aria-hidden="true">→</span>
+                </a>
+            </div>
+            <button type="button" class="toggle-btn">Показать все</button>
+
+            <div class="types-swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#" class="type-card">
+                            <span>Ремонт ноутбуков</span>
+                            <span class="brand__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="type-card">
+                            <span>Ремонт планшетов</span>
+                            <span class="brand__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="type-card">
+                            <span>Ремонт ПК</span>
+                            <span class="brand__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="type-card">
+                            <span>Ремонт мониторов</span>
+                            <span class="brand__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
         <section class="prices-section">
             <h2>Цены на услуги</h2>
+            <div class="prices-swiper swiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="price-card">
+                            <span class="price-card__title">Диагностика</span>
+                            <span class="price-card__value">Бесплатно</span>
+                            <span class="price-card__title">Срок</span>
+                            <span class="price-card__value">30 мин</span>
+                            <a href="#" class="order-button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="price-card">
+                            <span class="price-card__title">Замена дисплея</span>
+                            <span class="price-card__value">1 000 ₽</span>
+                            <span class="price-card__title">Срок</span>
+                            <span class="price-card__value">30-120 мин</span>
+                            <a href="#" class="order-button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="price-card">
+                            <span class="price-card__title">Замена полифонического динамика</span>
+                            <span class="price-card__value">1 000 ₽</span>
+                            <span class="price-card__title">Срок</span>
+                            <span class="price-card__value">30-120 мин</span>
+                            <a href="#" class="order-button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="price-card">
+                            <span class="price-card__title">Тестирование с выдачей...</span>
+                            <span class="price-card__value">1 000 ₽</span>
+                            <span class="price-card__title">Срок</span>
+                            <span class="price-card__value">30-120 мин</span>
+                            <a href="#" class="order-button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="price-card">
+                            <span class="price-card__title">Замена ПО</span>
+                            <span class="price-card__value">1 000 ₽</span>
+                            <span class="price-card__title">Срок</span>
+                            <span class="price-card__value">30-120 мин</span>
+                            <a href="#" class="order-button">Заказать</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
             <table class="price-table">
                 <thead>
                     <tr>
@@ -271,15 +392,16 @@
             </p>
 
             <a href="#" class="commercial-offer">Получить коммерческое предложение ></a>
-        </section>
 
+        </section>
+        <footer class="main-footer">
+            <p class="footer-company">© 2019 CPS. Разработано командой Apesong.</p>
+            <a href="#" class="footer-link">Политика конфиденциальности</a>
+            <p class="footer-info">Информация, размещенная на данной странице, не является публичной офертой
+            </p>
+        </footer>
     </main>
-    <footer class="main-footer">
-        <p class="footer-company">© 2019 CPS. Разработано командой Apesong.</p>
-        <a href="#" class="footer-link">Политика конфиденциальности</a>
-        <p class="footer-info">Информация, размещенная на данной странице, не является публичной офертой
-        </p>
-    </footer>
+
 </body>
 
 </html>

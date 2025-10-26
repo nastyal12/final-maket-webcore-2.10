@@ -9,6 +9,6 @@
         background: $color-pink;
     }
     @media (min-width: $breakpoint-tablet) {
-        display: none; // Скрываем на планшете
+        display: none !important; // Скрываем на планшете
     }
 }
