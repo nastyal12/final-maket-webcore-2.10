@@ -149,4 +149,24 @@ document.addEventListener("DOMContentLoaded", () => {
     // И при изменении размера окна
     window.addEventListener('resize', checkSwipers);
 
-}); // <- Конец DOMContentLoaded
+});
+/**
+ * === 5. Логика "Показать все / Скрыть" для Различных видов техники (Desktop) ===
+ */
+const typesToggleBtn = document.querySelector('.types-section .toggle-btn');
+const typesList = document.querySelector('.types-section .types-list');
+
+if (typesToggleBtn && typesList) {
+    typesToggleBtn.addEventListener('click', () => {
+
+        typesList.classList.toggle('types-list--expanded');
+
+        if (typesList.classList.contains('types-list--expanded')) {
+            typesToggleBtn.textContent = 'Скрыть';
+            typesToggleBtn.classList.add('toggle-btn--toggled');
+        } else {
+            typesToggleBtn.textContent = 'Показать все';
+            typesToggleBtn.classList.remove('toggle-btn--toggled');
+        }
+    });
+}
